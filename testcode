@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "CloudFormation template to create an S3 bucket."
+
+Resources:
+  MyS3Bucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "sandeep1234"  # Replace with a globally unique name
+      VersioningConfiguration:
+        Status: "Enabled"  # Options are "Enabled" or "Suspended"
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      Tags:
+        - Key: "Name"
+          Value: "MyS3Bucket"
+        - Key: "Environment"
+          Value: "Production"  # Modify as needed
+
+Outputs:
+  BucketName:
+    Description: "sandeep1234"
+    Value: !Ref MyS3Bucket
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A CloudFormation template to create a VPC with public and private subnets, an internet gateway, route tables, and NAT gateway.
+
+
