@@ -35,4 +35,5 @@ Description: A CloudFormation template to create a VPC with public and private s
       Tags:
         - Key: Name
           Value: MyVPC
-
+   MapPublicIpOnLaunch: true
+      AvailabilityZone: !Select [ 0, !GetAZs
